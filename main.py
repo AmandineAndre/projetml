@@ -42,6 +42,7 @@ st.sidebar.image("data/accueil.jpg")
 selected_database = st.sidebar.radio("Sélectionnez une base de données", ("Diabète", "Vins","Charger un fichier CSV"))
 donnees,base = chargement_data.charger(selected_database)
 st.sidebar.write("Vous avez choisi la base "+base)
+st.sidebar.write("Félicitations")
 
 #######################################################################
 # SECTION PRINCIPALE (QUI CHANGE EN FONCTION DE L'ONGLET SELECTIONNE) #
