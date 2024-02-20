@@ -6,7 +6,7 @@ IMPORTS NÉCESSAIRES À CE MODULE :
 import streamlit as st
 
 # Module contenant les fonctions appelées pour le modèle de regression
-import regression # remplacer par : from modeles import regression
+from modeles import regression # remplacer par : from modeles import regression
 
 # Pour la validation croisée et le grissearch
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
