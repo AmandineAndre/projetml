@@ -36,7 +36,7 @@ def statistiques_desc(selected_database,donnees) :
             # Afficher les histogrammes
             st.write("Voici l'histogramme, la boîte à moustache et le KDE plot de votre colonne " + colonne_selectionnee)
             # Créer une figure
-            fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(15, 6))
+            fig1, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(15, 6))
             # Afficher l'histogramme dans la figure
             data.hist(ax=ax1)
             ax1.set_title('Histogramme')
@@ -45,7 +45,7 @@ def statistiques_desc(selected_database,donnees) :
             data.plot(kind='kde', ax=ax3)
             ax3.set_title('KDE plot')
             # Afficher le graphique dans Streamlit
-            st.pyplot(fig)
+            st.pyplot(fig1)
             st.markdown("- **Histogramme** : *diagramme représentant la répartition des valeurs d'une variable sous forme de barres, chaque barre représentant une plage de valeurs et sa hauteur étant proportionnelle à la fréquence ou à la densité de ces valeurs.*")
             st.markdown("- **Boîte à moustaches** : *graphique statistique représentant la distribution des données en affichant la médiane, les quartiles et les valeurs extrêmes, permettant ainsi de visualiser la dispersion et les valeurs aberrantes des données.*")
             st.markdown("- **KDE plot** (Kernel Density Estimation) : *méthode de visualisation statistique estimant la densité de probabilité d'une variable continue en lissant les données et en créant une courbe continue représentant la distribution des données.*")
@@ -60,12 +60,12 @@ def statistiques_desc(selected_database,donnees) :
             data = donnees[colonne_selec_cat]
             valeurs_frequences = data.value_counts()
             st.write("Voici l'histogramme et le diagramme circulaire de votre colonne " + colonne_selec_cat)
-            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
+            fig2, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
             data.hist(ax=ax1)
             ax1.set_title('Histogramme')
             ax2.pie(valeurs_frequences, labels=valeurs_frequences.index, autopct='%1.1f%%')
             ax2.set_title('Diagramme circulaire')
-            st.pyplot(fig)
+            st.pyplot(fig2)
             
             st.markdown("- **Histogramme** : *diagramme représentant la répartition des valeurs d'une variable sous forme de barres, chaque barre représentant une plage de valeurs et sa hauteur étant proportionnelle à la fréquence ou à la densité de ces valeurs.*")
             st.markdown("- **Diagramme circulaire** : *graphique statistique représentant les données sous forme de secteurs circulaires, chacun proportionnel à la fréquence ou à la proportion de la catégorie qu'il représente.*")
