@@ -12,10 +12,10 @@ import streamlit as st
 # On propose deux bases de données dans l'application, et on propose aussi d'importer n'importe quelle base de données CSV
 def charger(nom_base):
     if nom_base == 'Diabète':
-        df = pd.read_csv(r'.\data\diabete.csv', sep=",")
+        df = pd.read_csv(r'./data/diabete.csv', sep=",")
         base = 'Diabète'
     elif nom_base == 'Vins':
-        df = pd.read_csv(r'.\data\vin.csv', sep=",")
+        df = pd.read_csv(r'./data/vin.csv', sep=",")
         base = 'Vins'
     else:
         # Charger un fichier CSV personnalisé, en indiquant le type de séparateur
