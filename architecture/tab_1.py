@@ -8,6 +8,7 @@
 
 import streamlit as st
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 
@@ -36,14 +37,25 @@ def statistiques_desc(selected_database,donnees) :
             # Afficher les histogrammes
             st.write("Voici l'histogramme, la boîte à moustache et le KDE plot de votre colonne " + colonne_selectionnee)
             # Créer une figure
-            fig1, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(15, 6))
-            # Afficher l'histogramme dans la figure
-            data.hist(ax=ax1)
-            ax1.set_title('Histogramme')
-            data.plot(kind='box', ax=ax2)
-            ax2.set_title('Boîte à moustaches')
-            data.plot(kind='kde', ax=ax3)
-            ax3.set_title('KDE plot')
+            # fig1,(ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(15, 6))
+            # # Afficher l'histogramme dans la figure
+            # data.hist(ax=ax1)
+            # ax1.set_title('Histogramme')
+            # data.plot(kind='box', ax=ax2)
+            # ax2.set_title('Boîte à moustaches')
+            # data.plot(kind='kde', ax=ax3)
+            # ax3.set_title('KDE plot')
+            fig1, axs = plt.subplots(1, 3, figsize=(15, 6))
+            # Histogramme
+            sns.histplot(data,ax=axs[0])
+            axs[0].set_title('Histogramme')
+            # Boite à moustache
+            sns.boxplot(y=data, ax=axs[1])
+            axs[1].set_title('Boîte à moustaches')
+            # KDE plot
+            sns.kdeplot(data,ax=axs[2],fill=True)
+            axs[2].set_title('KDE plot')
+            
             # Afficher le graphique dans Streamlit
             st.pyplot(fig1)
             st.markdown("- **Histogramme** : *diagramme représentant la répartition des valeurs d'une variable sous forme de barres, chaque barre représentant une plage de valeurs et sa hauteur étant proportionnelle à la fréquence ou à la densité de ces valeurs.*")
