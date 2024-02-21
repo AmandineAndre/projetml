@@ -6,6 +6,8 @@
 ## :point_down: Prévisualisation de l'application :
 <div align= "center">
   <img src="data/application.jpg"/>
+
+  https://teamwinners.streamlit.app/
 </div>
 
 ## :point_down: Objectifs :
@@ -34,7 +36,7 @@ Notre application utilise :
 
 Créer un dossier sur votre bureau intitulé **`nouveau_dossier`** .
 Ouvrir VSCODE, ou un éditeur de code de votre choix, puis se localiser dans ce dossier.
-Ouvrez un terminal et placer votre dans dossier
+Ouvrez un terminal et placez-vous dans votre dossier.
 ```
 cd [nouveau_dossier]
 ```
@@ -58,7 +60,7 @@ pip install -r requirements.txt
 ```
 
 #### Lancement de l'application de machine learning 
-Si tout le dossier est bien télécharger, 'application est utilisable directement, en lancant deux commandes :
+Si tout le dossier est bien téléchargé, l'application est utilisable directement, en lancant deux commandes :
 - se placer dans le dossier
 ```
 cd [projetml]
@@ -67,7 +69,8 @@ cd [projetml]
 ```
 streamlit run main.py
 ```
-Vous devriez maintenant arriver sur une page web localhost, où l'application est utilisable
+Vous devriez maintenant arriver sur une page web localhost, où l'application est utilisable. <br>
+Sinon, voici le lien de notre application web : https://teamwinners.streamlit.app/ 
 
 ## 🚀&nbsp; Etapes à suivre pour utiliser l'application
 L'application de machine learning propose plusieurs options avant de lancer un modèle, toutes nécessaires !! Veuillez bien à regarder tous les onglets et sections :
@@ -81,7 +84,7 @@ Dans le menu de gauche : <br>
 Permet de visualiser quelques statistiques descriptives (tableaux et graphiques), afin de vérifier le bon import des données, et avoir un premier aperçu des retraitements qu'il y aura à faire.
 
 #### 3 - Onglet Nettoyage des données 
-👉 *Champs sans nom* : Selon les jeux de données, des champs sans nom peuvent s'importer. Une première sous-partie permet de lister les champs sans nom (de type "Unnamed...") et on décide si on supprimer ou conserve et renomme le(s) champ(s).<br>
+👉 *Champs sans nom* : Selon les jeux de données, des champs sans nom peuvent s'importer. Une première sous-partie permet de lister les champs sans nom (de type "Unnamed...") et on décide si on supprime ou conserve et renomme le(s) champ(s).<br>
 
 👉 *Valeurs nulles* : là aussi, selon le jeu de données, on peut se retrouver avec des valeurs nulles dans des champs. On affiche d'abord la liste des colonnes contenant des valeurs nulles, et plusieurs choix sont proposés à l'utilisateur : 
 - suppresion de toutes les lignes contenant des valeurs nulles (peut être dangereux),
@@ -90,19 +93,19 @@ Permet de visualiser quelques statistiques descriptives (tableaux et graphiques)
 
 #### 4 - Onglet Préparation au modèle
 👉 *Détection de la target* : <br>
-- Si votre jeu de données possède déjà un champ "target", ce champ sera automatiquement utilisé comme valeur à prédire (target). Si ce n'est pas la variable que vous voulez prédire, veuillez charger un nouveau jeu de données au format csv, où vous aurez au préalable renommé la variable targer avec un autre nom.<br>
+- Si votre jeu de données possède déjà un champ "target", ce champ sera automatiquement utilisé comme valeur à prédire (target). Si ce n'est pas la variable que vous voulez prédire, veuillez charger un nouveau jeu de données au format csv, où vous aurez au préalable renommé la variable target avec un autre nom.<br>
 - Si votre jeu de données ne possède pas de champ "target", vous avez la possibilité d'inscrire le nom de la colonne à prédire dans l'encadré prévu à cet effet.<br>
 
 👉 *Encodage des données* :<br>
 - Encodage de la target : si la target sélectionnée est catégorielle, il sera utile de l'encoder en variable numérique afin d'établir un modèle de prédiction (se fera automatiquement dans la section prévue).<br>
-- Encodage d'une autre colonne : si votre jeu de données contient des variables catégoriques, que vous souhaitez intégrer au modèle, il sera nécessaire là aussi de l'encoder. Il faudra pour cela sélectionner une ou plusieurs colonnes à recoder, et pour chaque colonne à encoder, entrer un nom pour la nouvelle colonne qui sera créée. Sinon, cocher "non".<br>
+- Encodage d'une autre colonne : si votre jeu de données contient des variables catégorielles, que vous souhaitez intégrer au modèle, il sera nécessaire là aussi de les encoder. Il faudra pour cela sélectionner une ou plusieurs colonnes à recoder, et pour chaque colonne à encoder, entrer un nom pour la nouvelle colonne qui sera créée. Sinon, cocher "non".<br>
 
 👉 *Standardisation des données* : Il peut être utile de standardiser son jeu de données, si cela n'est pas déjà fait, pour améliorer la modélisation. Si votre jeu de données n'est pas déjà standardisé, vous avez ici le choix (obligatoire à cocher) de standardiser ou non votre base. <br>
 
 👉 *Corrélations* : des corrélations sont affichées, utiles pour la sélection des features<br>
 
-👉 *Sélection des features pour le modèle* : 3 choxi vous sont proposés :<br>
-- sélection par défaut des features : toutes les variables numériques du jeu de données<br>
+👉 *Sélection des features pour le modèle* : 3 choix vous sont proposés :<br>
+- sélection par défaut des features : toutes les variables numériques du jeu de données (à éviter pour un meilleur modèle)<br>
 - sélection manuelle des features : les variables sélectionnées dans l'encadré précédent<br>
 - sélection automatique des features : en fonction de leur corrélation (indiquer un seuil)<br>
 
@@ -120,4 +123,4 @@ A chaque fois, vous pourrez choisir des paramètres si cela est demandé. <br>
 👉 *Validation / sauvegarde* : un GridSearchCV est effectué pour vous afficher le meilleur modèle de prédiction possible avec vos données (target et features), et vous avez la possibilité ensuite de sauvegarder ou non un modèle <br>
 
 #### 6 - Onglet Prédictions
-🚧 Ce module est en cours de développement. Il sera en application prochainement🚧
+🚧 Ce module est en cours de développement. Il sera proposé prochainement🚧
