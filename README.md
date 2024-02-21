@@ -73,7 +73,7 @@ Vous devriez maintenant arriver sur une page web localhost, où l'application es
 Sinon, voici le lien de notre application web : https://teamwinners.streamlit.app/ 
 
 ## 🚀&nbsp; Etapes à suivre pour utiliser l'application
-L'application de machine learning propose plusieurs options avant de lancer un modèle, toutes nécessaires !! Veuillez bien à regarder tous les onglets et sections :
+L'application de machine learning propose plusieurs options avant de lancer un modèle, toutes nécessaires !! Veillez bien à regarder tous les onglets et sections :
 
 #### 1 - Charger un jeu de données 
 Dans le menu de gauche : <br>
@@ -114,13 +114,16 @@ Permet de visualiser quelques statistiques descriptives (tableaux et graphiques)
 👉 *Récapitulatif des données sélectionnées pour le modèle* : pour finir, vous avez une section qui récapitule vos choix précédents : votre target, et vos features.<br>
 
 #### 5 - Onglet Modèle
-👉 *Entrainement* : En fonction de la target choisie, des modèles vous sont proposés :<br>
+👉 *Entrainement sur un modèle * : En fonction de la target choisie, des modèles vous sont proposés :<br>
 - si target numérique --> modèles de regression : LinearRegression, Ridge, Lasso<br>
 - si target catégorielle --> modèles de classification : LogisticRegression, DecisionTreeClassifier, RandomForestClassifier, SVC, KNeighborsClassifier<br>
 
-A chaque fois, vous pourrez choisir des paramètres si cela est demandé. <br>
+A chaque fois, vous pourrez sélectionner un modèle proposé, puis le paramétrer si cela est demandé. A la fin, vous avez la possibilité de le sauvegarder ou non. <br>
 
-👉 *Validation / sauvegarde* : un GridSearchCV est effectué pour vous afficher le meilleur modèle de prédiction possible avec vos données (target et features), et vous avez la possibilité ensuite de sauvegarder ou non un modèle <br>
+👉 *Comparaison des modèles * : test des différents modèles sur une combinaison de paramètres, avec vos données (target et features). <br>
+- dans le cas de la classification --> un GridSearchCV est effectué : vous aurez pour chaque modèle de classification, la meilleure combinaison de paramètres (la métrique de sélection est l'accuracy).<br>
+- dans le cas de la regression --> un GridSearchCV est aussi effectué : retourne la même chose, ainsi que la métrique de sélection associée (le R²).<br>
+    --> Et en plus, nous vous proposons une méthode manuelle de comparaison (avec validation croisée) qui retourne : un tableau avec tous les modèles entrainés, leurs paramètres, et leurs 3 métriques de comparaison moyennes sur la validation croisée (R², RMSE, MAE) ; ainsi qu'un meilleur modèle sélectionné (R² maximum) qu'il est possible de sauvegarder.<br>
 
 #### 6 - Onglet Prédictions
 🚧 Ce module est en cours de développement. Il sera proposé prochainement🚧
