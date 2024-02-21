@@ -48,7 +48,8 @@ def nettoyage_donnees(selected_database,donnees) :
             # On supprime toutes les colonnes sans nom
             if supprimer_colonnes :
                 donnees = general.supp_colonnes(donnees,colonnes_nom)
-                st.write("Vous venez de supprimer toutes les colonnes sans nom. Voici votre nouvelle base de données : ")
+                st.write("Vous venez de supprimer toutes les colonnes sans nom 🗑️")
+                st.write("Voici votre nouvelle base de données : ")
                 st.write(donnees.head())
             # On choisit les colonnes qu'on veut supprimer 
             if supp_colonne_choix : 
@@ -57,7 +58,8 @@ def nettoyage_donnees(selected_database,donnees) :
                 for colonnes in col_selec_supp :
                     colonnes_supp.append(colonnes)
                 donnees = general.supp_colonnes(donnees,colonnes_supp)
-                st.write("Vous venez de supprimer la (les) colonne(s) sélectionnée(s). Voici votre nouvelle base de données : ")
+                st.write("Vous venez de supprimer la (les) colonne(s) sélectionnée(s) 🗑️")
+                st.write("Voici votre nouvelle base de données : ")
                 st.write(donnees.head())    
             # On choisit le nom que l'on veut donner à la (aux) colonne(s)                
             if renommer_colonne : 
@@ -65,7 +67,8 @@ def nettoyage_donnees(selected_database,donnees) :
                     colonne = colonnes_nom[i]
                     nouveau_nom = st.text_input("Entrez le nouveau nom pour la colonne "+colonne, "")
                     donnees = general.renommer_colonnes(donnees,colonne,nouveau_nom)
-                    st.write("Vous venez de renommer la colonne "+ colonne + "par :" + nouveau_nom + ". Voici votre nouvelle base de données :")
+                    st.write("Vous venez de renommer la colonne "+ colonne + "par :" + nouveau_nom + ".")
+                    st.write("Voici votre nouvelle base de données :")
                     st.write(donnees.head())
         donnees = donnees
     

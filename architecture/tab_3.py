@@ -35,7 +35,7 @@ def etapes_preparation_modele(donnees):
         st.write("Votre choix : ",target_name)
 
         type_target,type_model = prep.type_target(donnees[target_name])
-        st.write(type_model)
+        st.write("Le modèle sera de type : ",type_model)
         
 
     """
