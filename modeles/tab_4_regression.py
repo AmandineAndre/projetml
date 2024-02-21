@@ -214,11 +214,12 @@ def etapes(features,target):
         else:         
             index_model = ligne_max_R2.name
             model_svg = ligne_max_R2['model']
-
+            param_model_svg = ligne_max_R2['param']
+ 
             if model_selection == "LinearRegression (par défaut)":
                 st.write("--> Modèle LinearRegression entraînement n°",index_model,"sauvegardé pour réaliser des prédictions.")
             else:
-                st.write("--> Modèle",model_selection," (alpha :",str(alpha)," ; max_iter :",str(max_iter)," ; tol :",str(tol),"), entraînement n°",index_model, "sauvegardé pour réaliser des prédictions.")
+                st.write("--> Modèle",model_selection," (paramètres :",str(param_model_svg),"), entraînement n°",index_model, "sauvegardé pour réaliser des prédictions.")
 
 
     with st.expander("**Comparaison des trois modèles de régression (méthode GridSearchCV) :**", expanded=False):
