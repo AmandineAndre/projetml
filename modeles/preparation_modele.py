@@ -100,7 +100,7 @@ def fig_target_correlations(target_corr_df):
 
 
 """
-c. TARGET :     /!\ À COMPLÉTER /!\ 
+c. TARGET :  
 """
 
 # Sélection de la target
@@ -129,7 +129,7 @@ def type_target(target):
             type_model = "regression"
             return type_target, type_model
         else:
-            st.write("La target détectée est de type objet/texte.")
+            st.write("La target détectée est de type catégorielle.")
             type_model = "classification"
             type_target = "texte"
             return type_target, type_model
