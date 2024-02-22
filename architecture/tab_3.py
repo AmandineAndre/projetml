@@ -148,21 +148,21 @@ def etapes_preparation_modele(donnees):
     st.write("Vous avez choisi : "+mode_selection_features)
 
     if mode_selection_features == "Sélection manuelle":
-        features = prep.features_manual_select(donnees,col_selectionnees)
+        features = prep.features_manual_select(donnees[col_num],col_selectionnees)
 
     elif mode_selection_features == "Sélection automatique":
         corr_seuil_defaut = "0.5"
         st.write('Entrez un seuil de coefficient de correlation : \n - valeur absolue comprise entre 0 et 1 \n - séparateur décimal : "."')
         corr_seuil = float(st.text_input("seuil : ", corr_seuil_defaut))        
-        features = prep.features_auto_select(donnees,corr_seuil,target)
+        features = prep.features_auto_select(donnees[col_num],corr_seuil,target)
 
         # si aucune colonne ne vérifie la condition : on fait la sélection par défaut (i.e. toutes les colonnes)
         if features.empty == True:
             st.write("Aucune variable sélectionnée ! --> Sélection par défaut (toutes les variables)")
-            features = prep.features_select_all(donnees,target)
+            features = prep.features_select_all(donnees[col_num],target)
 
     else:
-        features = prep.features_select_all(donnees,target)
+        features = prep.features_select_all(donnees[col_num],target)
     
     # Affichage des variables sélectionnées :
     st.write("Variables sélectionnées pour l'entraînement du modèle (features) : ")
